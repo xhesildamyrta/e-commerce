@@ -1,0 +1,52 @@
+header,header select{
+    background-color:#7E33E0;
+    color:#F1F1F1;
+    font-family: Josefin Sans;
+}
+.logo, {
+    font-family: Josefin Sans;
+    color:#0D0E43;
+}
+nav select, nav a{
+    font-family: Latto; 
+    color: #0D0E43; 
+}
+.search-btn,.contactBtn,footer button{
+    background-color:#FB2E86;
+}
+footer,.shop-list{
+    background-color:#EEEFFB;
+}
+footer h1{
+    font-family:Josefin Sans;
+}
+footer ul,.search-result{
+    color:#8A8FB9;
+}
+footer ul>li{
+    font-family: Lato;
+}
+/*faqja 3*/
+h1,h2,.fa-th-large,.fa-list{
+    color:#151875;
+}
+.prod-title{
+    color: #111C85;
+}
+.fa-shopping-cart.two ,.fa-envelope.two,.fa-search-plus{
+    color:#535399;
+}
+
+/*About*/
+.aboutUs{
+    border-left: 15px solid #2B3CAB;
+    border-radius: 6px;
+    border-bottom: 15px solid #2B3CAB;
+    
+}
+@media screen and(max-width:450px){
+    .mobi-results{
+        display:block;
+        background-color:red;
+    }
+}
