@@ -2,13 +2,14 @@
 @section('content')
 <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-        <div class="swiper-slide">
+    @for ($i = 0; $i < 4; $i++)
+        <div class="swiper-slide hidden lg:flex ">
             <div class="w-full" style="background-color: #F2F0FF;">
                 <div class="flex  pr-44">
                     <div class="">
                         <img src="img/slide_candle.png">
                     </div>
-                    <div class="space-y-3 py-48">
+                    <div class="space-y-3 py-14 xl:py-48">
                         <p class="font-bold text-pink-500">Best Furniture For Your Castle....</p>
                         <h3 class=" text-xl ld:text-5xl">New Furniture Collection Trends in 2020</h3>
                         <p class="font-bold text-indigo-800">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
@@ -22,26 +23,12 @@
                 </div>
             </div>
         </div>
-        <div class="swiper-slide">
-            <div class="w-full" style="background-color: #F2F0FF;">
-                <div class="flex  pr-44">
-                    <div class="">
-                        <img src="img/slide_candle.png">
-                    </div>
-                    <div class="space-y-3 py-48">
-                        <p class="font-bold text-pink-500">Best Furniture For Your Castle....</p>
-                        <h3 class=" text-xl ld:text-5xl">New Furniture Collection Trends in 2020</h3>
-                        <p class="font-bold text-indigo-800">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-                        <div class="">
-                            <button class="addCart py-4 px-10 text-center text-white mt-7 tracking-wider ">Shop Now </button>
-                        </div>
-                    </div>
-                    <div class="my-9">
-                        <img src="img/sofaPromotional.png">
-                    </div>
-                </div>
-            </div>
+        @endfor
+        @for ($i = 0; $i < 4; $i++)
+        <div class="swiper-slide lg:hidden">
+            <img src="img/tortuga.png" class="w-full"> 
         </div>
+        @endfor
     </div>
     <div class="swiper-pagination"></div>
 </div>
@@ -50,28 +37,27 @@
     <div class=" mt-6 lg:mt-32">
         <h1 class="text-xl lg:text-4xl text-center">Featured Products</h1>
     </div>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-7 mt-12">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-3 gap-x-7 mt-12">
         @for ($i = 0; $i < 4; $i++)
         <x-feature_product imgSrc="img/chair1.png" item="Cantilever chair" code="Code - Y523201" price="$42.00"/>
         @endfor
     </div>
     <div class="">
         <h1 class="mt-5 text-xl lg:mt-16 text-center lg:text-4xl">Latest Products</h1>
-        <div class="flex  md:text-lg place-content-center space-x-1.5 sm:space-x-14 pt-5" style="color:#151875;">
+        <div class="flex text-sm  md:text-lg place-content-center space-x-1.5 sm:space-x-14 pt-5" style="color:#151875;">
             <div>New Arrival</div>
             <div>Best Seller</div>
             <div>Featured</div>
             <div>Special Offer</div>
         </div>
     </div>
-    <div class="grid grid-cols-4">
-        <div class="px-4" style="background-color: purple;">
-            <div class=" py-4" style="background-color: yellow;">
-                <img src="img/yellowchair.png" class="">
-            </div>
-        </div>
+    <div class="grid grid-cols-3 gap-x-8 gap-y-5 lg:gap-y-20 mt-4 lg:mt-16">
+    @for ($i = 0; $i < 6; $i++)
+    <x-latest_product src="img/brownchair.png" item="Comfort Handy Craft" price="$42.00" delPrice="$65.00"/>
+        
+        @endfor
     </div>
-    <h1 class="text-4xl text-center my-14">What Shopex Offer!</h1>
+    <h1 class=" text-xl lg:text-4xl text-center my-14">What Shopex Offer!</h1>
     <div class="grid grid-cols-2 md:grid-cols-4 md:space-x-7">
         <x-shopex_offer imgSrc="img/free-delivery.png" text="24/7 Support" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida."/>
         <x-shopex_offer imgSrc="img/cashback 1.png" text="24/7 Support" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida."/>
@@ -118,7 +104,7 @@
             <h1 class="pt-3 md:pt-8">23% off in all products</h1>
             <div class="flex">
                 <p class="underline underline-offset-4 text-pink-500">Shop Now</p>
-                <img src="img/clock1.png" class="float-right pt-2 pl-1">
+                <img src="img/clock1.png" class="pt-2 pl-1">
             </div>
         </div>
         <div class="px-6 space-y-2.5 w-full" style="background-color: #EEEFFB;">

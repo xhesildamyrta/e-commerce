@@ -14,21 +14,23 @@ nav select, nav a{
 .search-btn,.contactBtn,.addCart,footer button{
     background-color: #FB2E86;
 }
-/*page 1*/
+
 .img-wrapper{
     background-color:#F6F7FB;
 }
 .viewDetail-btn{
     background-color:#08D15F;
 }
+.swiper-pagination-bullet{
+    background-color: red;
+    border: 3px solid black;
 
-
-
-
-
-
-
-
+}
+.swiper-pagination-bullet-active{
+    background-color:red;
+    border: 3px  solid pink;
+    
+}
 
 
 footer,.shop-list{
@@ -43,7 +45,7 @@ footer ul,.search-result{
 footer ul>li{
     font-family: Lato;
 }
-/*faqja 3*/
+
 h1,h2,.fa-th-large,.fa-list{
     color:#151875;
 }
@@ -51,7 +53,7 @@ h1,h2,.fa-th-large,.fa-list{
 .fa-shopping-cart.two ,.fa-heart.two,.fa-search-plus{
     color: #535399;
 }
-/*About*/
+
 .aboutUsImg{
     border-left: 15px solid #2B3CAB;
     border-radius: 6px;
@@ -64,12 +66,7 @@ h1,h2,.fa-th-large,.fa-list{
 .fa-circle{
     font-sze:45px;
 }
-@media screen and(max-width:450px){
 
-}
-
-
-/* shop list page 3*/
 .indicator-title{
     color:#101750;
 }
