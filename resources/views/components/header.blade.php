@@ -1,4 +1,4 @@
-<header>
+<header >
   <div class="container px-4 xl:px-32 mx-auto md:flex md:items-center py-2.5 justify-between">
     <div class="flex items-center justify-between space-x-2 sm:space-x-12">
       <a href="mailto:mhhasanul@gmail.com">

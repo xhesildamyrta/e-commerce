@@ -11,15 +11,15 @@
                 </div>
             </div>
             <div class="content-wrapper text-center space-y-1 sm:space-y-3 group-hover:bg-blue-600" style="box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);">
-               <h1 class="text-pink-500 pt-2 sm:pt-4">{{$item}}</h1>
+               <h1 class="text-pink-500 pt-2 sm:pt-4 group-hover:text-white">{{$item}}</h1>
                 <div class="flex space-x-1.5 place-content-center">
                     <div class="w-3.5 h-1 rounded-xl" style="background-color: #05E6B7;"></div>
                     <div class="w-3.5 h-1 rounded-xl" style="background-color: #F701A8;"></div>
                     <div class="w-3.5 h-1 rounded-xl" style="background-color: #00009D;"></div>
                 </div>
-                <div>
-                    <h1 class="text-sm">{{$code}}</h1>
-                    <h1 class="pt-3 pb-4">{{$price}}</h1>
+                <div >
+                    <h1 class="text-sm group-hover:text-white">{{$code}}</h1>
+                    <h1 class="pt-3 pb-4 group-hover:text-white">{{$price}}</h1>
                 </div>
             </div>
         </div> 

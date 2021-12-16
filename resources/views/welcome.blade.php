@@ -186,11 +186,32 @@
         </div>
     </div>
     <h1 class="text-center text-4xl mt-20">Top Categories</h1>
-    <div class="grid grid-cols-2 gap-x-3 gap-y-3 lg:grid-cols-4 mt-12">
-        @for ($i = 0; $i < 4; $i++)
-        <x-top_category imgSrc="img/chair2.png" cat1="Mini" cat2="LCW" cat3="Chair" price="$56.00"/>
-        @endfor
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="grid grid-cols-2 gap-x-3 gap-y-3 lg:grid-cols-4 mt-12">
+                @for ($i = 0; $i < 4; $i++)
+                <x-top_category imgSrc="img/chair2.png" cat1="Mini" cat2="LCW" cat3="Chair" price="$56.00"/>
+                 @endfor
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="grid grid-cols-2 gap-x-3 gap-y-3 lg:grid-cols-4 mt-12">
+                    @for ($i = 0; $i < 4; $i++)
+                    <x-top_category imgSrc="img/chair2.png" cat1="Mini" cat2="LCW" cat3="Chair" price="$56.00"/>
+                    @endfor
+                </div>
+            </div>
+            <div class="swiper-slide"> <div class="grid grid-cols-2 gap-x-3 gap-y-3 lg:grid-cols-4 mt-12">
+                @for ($i = 0; $i < 4; $i++)
+                <x-top_category imgSrc="img/chair2.png" cat1="Mini" cat2="LCW" cat3="Chair" price="$56.00"/>
+                @endfor
+            </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
+   
 </div>
 <div class="h-full bg-[url('/img/nice.png')] place-content-center mt-32" style="background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;">
     <div class="grid place-items-center pt-11 lg:pt-44">
