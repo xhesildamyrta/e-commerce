@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 Route::get('/shop-list', function () {
     return view('shop-list');
 });
-Route::get('/all-products', function () {
-    return view('all-products');
-});
+
 Route::get('/about', function () {
     return view('about-us');
 });
@@ -31,3 +31,13 @@ Route::get('/contact', function () {
 Route::get('/success', function () {
     return view('order-success');
 });
+
+/*Authentication*/
+Route::get('dashboard', [AuthController::class, 'dashboard']); 
+Route::get('login', [AuthController::class, 'index'])->name('login');
+Route::post('user-login', [AuthController::class, 'userLogin'])->name('login.user'); 
+Route::get('register', [AuthController::class, 'register'])->name('register');
+Route::post('user-registration', [AuthController::class, 'store'])->name('register.user'); 
+Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
+
+Route::get('/all-products', [App\Http\Controllers\ProductController::class, 'index'])->name('all-products');

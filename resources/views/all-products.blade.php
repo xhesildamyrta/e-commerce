@@ -4,9 +4,13 @@
 <div class="container mx-auto px-4 xl:px-32">
     @include('filter-partial')
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-6 xl:gap-x-20 xl:gap-y-12 mt-10 lg:mt-36 ">
-        @for ($i = 0; $i < 12; $i++)
-        <x-grid_product imgSrc="img/headphones.png" item="Sed at fermentum" price="$26.00" delPrice="$42.00"/>
-        @endfor
+        @if(!empty($products) && $products->count())
+            @foreach($products as $product)
+                <x-grid_product imgSrc="{{ asset('img/'.$product->photoURL) }}" item="{{ $product->title }}" price="$ {{ $product->price }}" delPrice="$ {{ $product->reducedPrice }}"/>
+            @endforeach
+        @else
+            <h1 class="text-red-500">There are no products in database</h1>
+        @endif
     </div>
     <div class="place-content-center py-3 xl:px-80 pt-11 pb-6 2xl:py-24">
         <img src="img/sponsor.png"  class="w-full">

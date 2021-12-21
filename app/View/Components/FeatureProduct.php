@@ -32,5 +32,8 @@ class FeatureProduct extends Component
     public function render()
     {
         return view('components.feature-product');
+        // return view('components.feature-product',[
+            
+        // ]);
     }
 }

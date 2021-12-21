@@ -2,7 +2,7 @@
 @section('content')
 <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-    @for ($i = 0; $i < 4; $i++)
+    @for ($i = 0; $i < 2; $i++)
         <div class="swiper-slide hidden lg:flex ">
             <div class="w-full" style="background-color: #F2F0FF;">
                 <div class="flex  pr-44">
@@ -39,7 +39,9 @@
     </div>
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-3 gap-x-7 mt-12">
         @for ($i = 0; $i < 4; $i++)
+
         <x-feature_product imgSrc="img/chair1.png" item="Cantilever chair" code="Code - Y523201" price="$42.00"/>
+
         @endfor
     </div>
     <div class="">
@@ -55,7 +57,7 @@
     @for ($i = 0; $i < 6; $i++)
     <x-latest_product src="img/brownchair.png" item="Comfort Handy Craft" price="$42.00" delPrice="$65.00"/>
         
-        @endfor
+    @endfor
     </div>
     <h1 class=" text-xl lg:text-4xl text-center my-14">What Shopex Offer!</h1>
     <div class="grid grid-cols-2 md:grid-cols-4 md:space-x-7">

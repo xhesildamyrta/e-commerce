@@ -17,12 +17,22 @@
         <option value="usd">USD</option>
         <option value="euro">EUR</option>
       </select>
-      <a href="#" class="flex items-center space-x-1"><p>Login</p><i class="far fa-user flex"></i></a>
+      @if( auth()->check() )
+      <a href="" class="flex items-center space-x-1"><i class="far fa-user flex"></i><p>{{ auth()->user()->name }}</p></a>
+      <a href="{{ route('signout') }}" class="flex items-center space-x-1">Logout</a>
+      @else
+      <a href="{{ route('login') }}" class="flex items-center space-x-1"><p>Login</p><i class="far fa-user flex"></i></a>
+      <a href="{{ route('register') }}" class="flex items-center space-x-1"><p>Register</p></a>
+      @endif
       <a href="#" class="flex items-center space-x-1"><p>Wishlist</p><i class="far fa-heart"></i></a>
       <svg class="h-5 w-5 "  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="9" cy="21" r="1" />  <circle cx="20" cy="21" r="1" />  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" /></svg>
     </div>
   </div>
 </header>
+
+
+
+
 <nav class="py-2 xl:py-4 flex">
   <div class="container px-4 xl:px-32 mx-auto md:flex items-center justify-between">
     <div class="flex justify-between items-center">
@@ -48,9 +58,13 @@
       <a href="about" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Pages</a>
       <a href="shop-list" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Products</a>
       <a href="#" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Blog</a>
-      <a href="all-products" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Shop</a>
+      <a href="{{ route('all-products') }}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Shop</a>
       <a href="contact" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Contact</a>
-      <a href="#" class="p-2 lg:px-4 md:hidden text-indigo-600 text-center border border-solid border-p-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1 text-xl">Login <i class="far fa-user flex"></i></a>
+      @if( auth()->check() )
+      <a href="{{ route('signout') }}" class="p-2 lg:px-4 md:hidden text-indigo-600 text-center border border-solid border-p-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1 text-xl">Logout <i class="far fa-user flex"></i></a>
+      @else
+      <a href="{{ route('login') }}" class="p-2 lg:px-4 md:hidden text-indigo-600 text-center border border-solid border-p-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1 text-xl">Login <i class="far fa-user flex"></i></a>
+      @endif
     </div>
     <div class="flex py-2">
       <input type="text" name="search" class="w-full py-0.5 px-4 2xl:py-2  md:w-36 lg:w-80 border-2 focus:outline-none">
