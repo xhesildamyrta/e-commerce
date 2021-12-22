@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,9 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/shop-list', function () {
-    return view('shop-list');
-});
+
+
+
 
 Route::get('/about', function () {
     return view('about-us');
@@ -41,3 +42,7 @@ Route::post('user-registration', [AuthController::class, 'store'])->name('regist
 Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 
 Route::get('/all-products', [App\Http\Controllers\ProductController::class, 'index'])->name('all-products');
+Route::get('/product-list', [App\Http\Controllers\ProductController::class, 'ShopList'])->name('product-list');
+Route::get('/search', [\App\Http\Controllers\SearchController::class, 'search'])->name('search');
+
+Route::get('/product-filter', [\App\Http\Controllers\FindController::class, 'index'])->name('product-filter');

@@ -12,6 +12,9 @@
             <h1 class="text-red-500">There are no products in database</h1>
         @endif
     </div>
+  <div class="">
+    {{ $products->links() }}
+  </div>
     <div class="place-content-center py-3 xl:px-80 pt-11 pb-6 2xl:py-24">
         <img src="img/sponsor.png"  class="w-full">
     </div>

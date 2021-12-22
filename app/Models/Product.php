@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+    
+    public $timestamps = false;
+    protected $table = 'products';
+
+
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
 }

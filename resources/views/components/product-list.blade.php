@@ -1,5 +1,5 @@
 <div class="sm:flex sm:space-x-8">
-      <img src="{{$imgSrc}}"  alt="living-room.png" class="w-full sm:w-60 2xl:w-80 object-cover object-center">
+      <img src="{{$imgSrc}}"  alt="living-room.png" class="w-full sm:w-60 2xl:w-80 2xl:h-56 object-cover object-center">
       <div class="flex flex-col py-2 xl:py-6">
         <div class="flex place-items-center space-x-5">
           <h1 class="prod-title text-lg 2xl:text-xl">{{$item}}</h1>
