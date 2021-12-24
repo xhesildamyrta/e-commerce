@@ -226,7 +226,7 @@
 </div>
 <div class="container mx-auto px-4 xl:px-32">
     <h1 class=" text-xl lg:text-4xl text-center">Latest Blog</h1>
-    <div class="grid grid-cols-3 mt-4 lg:mt-20 gap-x-3 xl:gap-x-14 mb-28">
+    <div class="grid grid-cols-1 sm:grid-cols-3 mt-4 lg:mt-20 gap-x-3 xl:gap-x-14 mb-28">
         @for ($i = 0; $i < 3; $i++)
         <x-latest_blog imgSrc="img/lv.png" author="SaberAli" date="21 August,2020" title="Top esssential Trends in 2021" body="More off this less hello samlande lied much over tightly circa horse taped mightly"/>
         @endfor

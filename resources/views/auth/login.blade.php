@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('content')
+ @if(session()->has('success_message')) 
+        <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
+            <p class="font-bold"> {{ session()->get('success_message') }}</p>
+        </div>
+    @endif
 <div class="flex items-center justify-center py-4 bg-gray-100">
     <div class="px-8 py-6 mt-4 text-left bg-white shadow-lg">
         <div class="flex justify-center">
@@ -9,6 +14,11 @@
             </svg>
         </div>
         <h3 class="text-2xl font-bold text-center">Login to your account</h3>
+        @if(session()->has('fail_message')) 
+        <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert" id="alert">
+             {{ session()->get('fail_message') }}
+        </div>
+        @endif
         <form method="POST" action="{{ route('login.user') }}">
             @csrf
             <div class="mt-4">

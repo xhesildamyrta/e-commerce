@@ -5,3 +5,7 @@ toggleBtn.onclick = () => {
   collapse.classList.toggle("flex");
 };
 
+$(function() {
+  setTimeout(function() { $("#alert").fadeOut(1500); }, 5000)
+
+  })

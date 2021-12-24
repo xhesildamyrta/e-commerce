@@ -15,7 +15,7 @@
         <div class="mt-4 lg:mt-0">
             <h1 class="text-2xl lg:text-4xl">Contact Way</h1>
             <div class="flex flex-col space-y-4 sm:space-y-12 pt-3.5">
-                <div class="grid grid-cols-2 sm:space-x-8 ">
+                <div class="grid grid-cols-1 sm:grid-cols-2 sm:space-x-8 ">
                     <div class="flex place-items-center">
                     <div class="w-5 h-5 md:w-10 md:h-10 bg-blue-700 rounded-full"></div>
                         <div class="font-semibold text-gray-500 ">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 sm:space-x-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 sm:space-x-8">
                     <div class=" flex place-items-center">
                     <div class="w-5 h-5 md:w-10 md:h-10 bg-orange-400 rounded-full"></div>
                         <div class="font-semibold text-gray-500 ">

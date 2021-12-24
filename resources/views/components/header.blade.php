@@ -30,11 +30,10 @@
   </div>
 </header>
 
-
 <nav class="py-2 xl:py-4 flex">
   <div class="container px-4 xl:px-32 mx-auto md:flex items-center justify-between">
     <div class="flex justify-between items-center">
-      <a href="/" class="logo text-lg font-bold xl:text-4xl">HEKTO</a>
+      <a href="/" class="logo text-lg font-bold xl:text-4xl">Hekto</a>
       <button class="border border-solid border-gray-600 px-3 py-1 rounded text-gray-600 opacity-50 hover:opacity-75 md:hidden" id="navbar-toggle">
         <i class="fas fa-bars"></i>
       </button>
@@ -55,9 +54,9 @@
       <a href="/" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600 ">Home</a>
       <a href="" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Pages</a>
       <a href="{{ route('product-list') }}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Products</a>
-      <a href="#" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Blog</a>
+      <a href="{{ route('blog') }}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Blog</a>
       <a href="{{ route('all-products') }}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Shop</a>
-      <a href="about" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">About</a>
+      <!-- <a href="about" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">About</a> -->
       <a href="contact" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Contact</a>
       @if( auth()->check() )
         <a href="{{ route('signout') }}" class="p-2 lg:px-4 md:hidden text-indigo-600 text-center border border-solid border-p-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1 text-xl">Logout <i class="far fa-user flex"></i></a>

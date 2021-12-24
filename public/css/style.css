@@ -1,15 +1,16 @@
 header,header select{
     background-color:#7E33E0;
     color:#F1F1F1;
-    font-family: Josefin Sans;
+    font-family: 'Josefin Sans', sans-serif;
 }
+
 
 .logo, {
     font-family: Josefin Sans;
     color:#0D0E43;
 }
 nav select, nav a{
-    font-family: Latto; 
+    font-family: 'Josefin Sans', sans-serif; 
     color: #0D0E43; 
 }
 .search-btn,.contactBtn,.addCart,footer button{

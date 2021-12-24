@@ -1,4 +1,4 @@
-<div class="flex flex-col place-items-center">
+<div class="flex flex-col ">
     <img src="{{$imgSrc}}" class="rounded-md">
     <div class="content-wrapper pt-1.5 md:pt-5 px-1.5 md:px-5" style="box-shadow: 0px 8px 40px rgba(49, 32, 138, 0.05);">
         <div class="lg:flex lg:space-x-7">

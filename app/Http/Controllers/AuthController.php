@@ -26,7 +26,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->intended('/')->withSuccess('You are loged in');
         }
-        return redirect("/login")->withSuccess('Login details are not valid');
+        return redirect("/login")->with('fail_message','Login details are not valid');
     }
 
     public function register()
