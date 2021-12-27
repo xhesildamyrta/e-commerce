@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use App\Models\Comment;
 use App\Models\User;
 Use \Carbon\Carbon;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -19,8 +20,9 @@ class BlogController extends Controller
     public function index()
     {
     //    $blogs=Blog::with('user')->latest()->paginate(1);
-       $blogs=Blog::orderBy('creation_date', 'DESC')->get();
-       return view('blog', compact('blogs'));
+       $blogs=Blog::orderBy('creation_date', 'DESC')->paginate(1);
+       $comments=Comment::orderBy('creation_date', 'DESC')->get();
+       return view('blog', compact('blogs','comments'));
     }
 
     /**

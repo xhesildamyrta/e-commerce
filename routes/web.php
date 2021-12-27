@@ -64,7 +64,7 @@ Route::post('/create', [\App\Http\Controllers\BlogController::class, 'store'])->
 Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index'])->name('blog');
 
 
-Route::get('/comment', [\App\Http\Controllers\CommentsController::class, 'index'])->name('create-comment');
-Route::post('/comment/{id}', [\App\Http\Controllers\CommentsController::class, 'store'])->name('post-comment');
+
+Route::post('/blog', [\App\Http\Controllers\CommentsController::class, 'store']);
 
 

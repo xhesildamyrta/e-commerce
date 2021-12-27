@@ -15,10 +15,9 @@ class CommentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('create-comment');
-    }
+
+   
+   
 
     /**
      * Show the form for creating a new resource.
@@ -36,22 +35,20 @@ class CommentsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(Request $request)
     {
-        $request->validate([
-            'author_name' => 'required|string',
-            'author_email'=>'required',
-            'author_comment'=>'required',  
-        ]);
-        
-        $comment = new Comment;
-        $comment->blog_id = $id;
-        $comment->name = $request->get('author_name');
-        $comment->email = $request->get('author_email');
-        $comment->comment = $request->get('author_comment');
-        $comment->creation_date = Carbon::today();
-        $comment->save();
 
+       $blog=Blog::find($request->only('id'))->first();
+
+
+
+       Comment::create([
+           'user_id'=>auth()->user()->id,
+           'comment' => $request->get('author_comment'),
+           'creation_date' => Carbon::now(),
+           'blog_id'=>$blog->id,
+       ]);
+  
         return redirect()->route('blog')->with('success_message', 'Comment made successfully!');
     }
 

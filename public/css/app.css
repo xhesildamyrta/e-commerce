@@ -637,28 +637,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 8rem;
 }
 
+.h-40 {
+  height: 10rem;
+}
+
 .h-16 {
   height: 4rem;
 }
 
 .h-64 {
   height: 16rem;
-}
-
-.h-44 {
-  height: 11rem;
-}
-
-.h-60 {
-  height: 15rem;
-}
-
-.h-36 {
-  height: 9rem;
-}
-
-.h-40 {
-  height: 10rem;
 }
 
 .min-h-screen {
@@ -1658,6 +1646,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .hover\:border-current:hover {
   border-color: currentColor;
+}
+
+.hover\:border-purple-500:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(168 85 247 / var(--tw-border-opacity));
 }
 
 .hover\:bg-pink-600:hover {
