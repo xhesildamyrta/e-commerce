@@ -1,11 +1,11 @@
 <header >
   <div class="container px-4 xl:px-32 mx-auto md:flex md:items-center py-2.5 justify-between">
     <div class="flex items-center justify-between space-x-2 sm:space-x-12">
-      <a href="mailto:mhhasanul@gmail.com">
-        <i class="far fa-envelope"><span class="pl-2">mhhasanul@gmail.com</span></i>
+      <a href="mailto:mhhasanul@gmail.com" class="flex items-center space-x-2">
+        <i class="far fa-envelope"></i><span class="hidden lg:flex">mhhasanul@gmail.com</span>
       </a>
       <a href="tel:+(12345)67890" class="flex items-center space-x-2">
-        <i class="fas fa-phone-volume"></i><p>(12345)67890</p>
+        <i class="fas fa-phone-volume"></i><span class="hidden lg:flex">(12345)67890</span>
       </a>
     </div>
     <div class="hidden md:display md:flex md:items-center space-x-5">
@@ -52,12 +52,12 @@
         <i class="fas fa-shopping-cart"></i>
       </div>
       <a href="/" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600 ">Home</a>
-      <a href="" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Pages</a>
-      <a href="{{ route('product-list') }}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Products</a>
+      <a href="" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600 ">Pages</a>
+      <a href="{{ route('product-list') }}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600 ">Products</a>
       <a href="{{ route('blog') }}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Blog</a>
       <a href="{{ route('all-products') }}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Shop</a>
-      <!-- <a href="about" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">About</a> -->
       <a href="contact" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Contact</a>
+      <a href="about" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600 ">About</a>
       @if( auth()->check() )
         <a href="{{ route('signout') }}" class="p-2 lg:px-4 md:hidden text-indigo-600 text-center border border-solid border-p-600 rounded hover:bg-indigo-600 hover:text-white transition-colors duration-300 mt-1 md:mt-0 md:ml-1 text-xl">Logout <i class="far fa-user flex"></i></a>
       @else

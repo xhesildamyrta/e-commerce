@@ -3,35 +3,42 @@ header,header select{
     color:#F1F1F1;
     font-family: 'Josefin Sans', sans-serif;
 }
-
-
-.logo, {
+.logo{
     font-family: Josefin Sans;
     color:#0D0E43;
 }
 nav select, nav a{
-    font-family: 'Josefin Sans', sans-serif; 
+    font-family: 'Lato', sans-serif;
     color: #0D0E43; 
 }
 .search-btn,.contactBtn,.addCart,footer button{
     background-color: #FB2E86;
-}
+    font-family: 'Josefin Sans', sans-serif;
 
+}
 .img-wrapper{
     background-color:#F6F7FB;
 }
 .viewDetail-btn{
     background-color:#08D15F;
 }
-.swiper-pagination-bullet{
-    background-color: red;
-    border: 3px solid black;
-
+span.swiper-pagination-bullet{
+    background-color:transparent;
+    border:2px solid #FB2E86;
+    width:10px;
+    height:10px;
 }
-.swiper-pagination-bullet-active{
-    background-color:red;
-    border: 3px  solid pink;
-    
+span.swiper-pagination-bullet-active{
+    background-color:#FB2E86;
+}
+.rhombus span.swiper-pagination-bullet{
+    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+} 
+.rhombus span.swiper-pagination-bullet-active{
+    background-color:#FB2E86;
+    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);  
 }
 .pagination{
     display:flex;
@@ -68,18 +75,18 @@ nav select, nav a{
     opacity: 0.5 !important;
 }
 
-
 footer,.shop-list{
     background-color:#EEEFFB;
 }
-footer h1{
-    font-family:Josefin Sans;
+footer h1,.slider-heading,.section-heading,.free-delivery,.blog-title,
+.item-name,.item-price,.item-del-price,.item-cat,.indicator-title{
+    font-family: 'Josefin Sans', sans-serif;
 }
 footer ul,.search-result{
     color:#8A8FB9;
 }
-footer ul>li{
-    font-family: Lato;
+footer ul>li,.item-desc,.desc{
+    font-family: 'Lato', sans-serif;
 }
 
 h1,h2,.fa-th-large,.fa-list{

@@ -38,6 +38,11 @@ Route::get('/success', function () {
 });
 
 /*Authentication*/
+
+
+
+
+
 Route::get('dashboard', [AuthController::class, 'dashboard']); 
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('user-login', [AuthController::class, 'userLogin'])->name('login.user'); 
@@ -48,6 +53,8 @@ Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 Route::get('/all-products', [App\Http\Controllers\ProductController::class, 'index'])->name('all-products');
 Route::get('/product-list', [App\Http\Controllers\ProductController::class, 'ShopList'])->name('product-list');
 
+
+Route::get('/', [App\Http\Controllers\CategoriesController::class, 'index']);
 Route::get('/search', [\App\Http\Controllers\SearchController::class, 'search'])->name('search');
 Route::get('/product-filter', [\App\Http\Controllers\FindController::class, 'index'])->name('product-filter');
 

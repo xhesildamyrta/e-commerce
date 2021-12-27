@@ -15,11 +15,9 @@
       <div class="w-full px-8 ">
         <h1 class="pt-4  2xl:text-xl lg:pt-0">Categories</h1>
         <ul class="pt-1 space-y-1 2xl:space-y-5  2xl:pt-10">
-          <li>Laptops & Computers</li>
-          <li>Cameras & Photography</li>
-          <li>Smart Phones & Tablets</li>
-          <li>Video Games & Consoles</li>
-          <li>Waterproof Headphones</li>
+          @foreach (App\Models\Category::all() as $cat)
+          <li>{{$cat->name}}</li>
+          @endforeach
         </ul>
       </div>
       <div class="w-full px-4">

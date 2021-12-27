@@ -6,19 +6,19 @@
             <i class="far fa-heart text-indigo-900"></i>
         </div>
         <div class="">
-            <img src="{{$imgSrc}}">
+            <img src="{{$imgSrc}}" class="h-32 lg:h-44">
         </div>
     </div>
     <div class="lg:mt-4">
-        <h1 class="text-lg text-center">{{$item}}</h1>
+        <h1 class="item-name text-lg text-center">{{$item}}</h1>
         <div class="flex lg:pt-4 place-content-center space-x-1.5">
             <i class="fas fa-circle text-orange-600 " style="font-size: 12px;"></i>
             <i class="fas fa-circle text-pink-600" style="font-size: 12px;"></i>
             <i class="fas fa-circle text-blue-800" style="font-size: 12px;"></i>
         </div>
         <div class="flex pt-4 space-x-2.5 place-content-center">
-            <h1>{{$price}}</h1>
-            <h1 class="text-pink-500"><del>{{$delPrice}}</del></h1>
+            <h1 class="item-price">{{$price}}</h1>
+            <h1 class="item-del-price text-pink-500"><del>{{$delPrice}}</del></h1>
         </div>
     </div>
 </div>

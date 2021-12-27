@@ -27,14 +27,10 @@
                         <div class="flex space-x-4">
                             <p class="text-indigo-600 mt-4 underline underline-offset-2 mb-8">Read More</p>
                             <a href="{{ route('create-comment',$blog->id) }}"><p class="flex text-indigo-600 mt-4 underline underline-offset-2 mb-8">Comment</p></a>
-                            <!-- {{ route('blog', $blog->id) }} -->
                             <p class="flex text-indigo-600 mt-4 underline underline-offset-2 mb-8">Show Comments</p>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="lg:flex gap-x-8 mt-8">
-                    <iframe src="{{$blog->video}}" class="w-full h-80"></iframe>
-                </div> -->
             </div>
             @endforeach
             @else
@@ -83,19 +79,21 @@
             @endauth
             <div class="search-section mt-6">
                 <h1 class="text-2xl font-semibold">Search</h1>
+                <form action="{{ route('search') }}" method="GET">
                 <div class="relative flex  flex-wrap items-stretch mt-4 mb-3 text-gray-400">
-                    <input type="text" name="q" class="px-3 py-2 placeholder-blueGray-300 text-blueGray-600 relative bg-white  rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:ring w-full pr-10" placeholder="Search For Posts" autocomplete="off"/>
+                    <input type="text" name="query" id="query" value="{{ request()->input('query') }}" class="px-3 py-2 placeholder-blueGray-300 text-blueGray-600 relative bg-white  rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:ring w-full pr-10" placeholder="Search For Posts" autocomplete="off"/>
                     <span class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-1">
                         <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                         </button>
                     </span>
                 </div>
+                </form>
             </div>
             <div class="recent-post-section mt-10">
                 <h1 class="text-2xl font-semibold mb-3">Recent Posts</h1>
                 <div class="grid gap-y-8">
-                    @foreach ($blogs as $blog)
+                    @foreach ($blogs->take(2) as $blog)
                         <div class="flex space-x-4">
                             <div class="w-20">
                                 <img src="{{asset('img/'.$blog->photo)}}" class="h-20">

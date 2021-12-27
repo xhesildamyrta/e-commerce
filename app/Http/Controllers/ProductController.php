@@ -16,10 +16,10 @@ class ProductController extends Controller
 
 
     public function ShopList() {
-        $products = Product::where("category_id", "=", 6)->paginate(4);
+        // $products = Product::where("category_id", "=", 6)->paginate(4);
+        $products = Product::paginate(4);
 
         return view('shop-list', compact('products'));
     }
 
-  
 }

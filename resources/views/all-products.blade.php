@@ -3,7 +3,7 @@
 <x-page-indicator page="Shop Grid Default"/>
 <div class="container mx-auto px-4 xl:px-32">
     @include('filter-partial')
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-6 xl:gap-x-20 xl:gap-y-12 mt-10 lg:mt-36 ">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-6 xl:gap-x-20 xl:gap-y-12 mt-10 lg:mt-36 " id="divForm">
         @if(!empty($products) && $products->count())
             @foreach($products as $product)
                 <x-grid_product imgSrc="{{ asset('img/'.$product->photoURL) }}" item="{{ $product->title }}" price="$ {{ $product->price }}" delPrice="$ {{ $product->reducedPrice }}"/>

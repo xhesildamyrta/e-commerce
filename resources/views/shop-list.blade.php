@@ -3,7 +3,7 @@
 <x-page-indicator page="Shop List"/>
 <div class="container mx-auto px-4 xl:px-32">
 @include('filter-partial')
-  <div class="mt-4 2xl:mt-24 grid grid-cols-1 space-y-3 xl:space-y-8">
+  <div class="mt-4 2xl:mt-24 grid grid-cols-1 gap-y-3 xl:gap-y-8" id="divForm">
     @foreach ($products as $product)
       <x-product_list imgSrc="{{asset('img/'.$product->photoURL)}}" item="{{ $product->title }}" price="$ {{ $product->price }}" delPrice="$ {{ $product->reducedPrice }}" description="{{ $product->description }}"/>
     @endforeach
