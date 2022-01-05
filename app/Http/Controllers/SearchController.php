@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Input\Input;
 
 class SearchController extends Controller
 {
@@ -19,4 +20,14 @@ class SearchController extends Controller
         return view('search')->with(['products' => $products,
             'query' => $query]);
     }
+
+    public function AjaxSearch(Request $request){
+        $inputSearch = $request['inputSearch'];
+        $keyResult = DB::table('products')
+        ->where('title', 'LIKE', '%'.$inputSearch.'%')->get();
+        echo  $keyResult;
+
+    }
+
+    
 }

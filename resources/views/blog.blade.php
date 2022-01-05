@@ -24,19 +24,7 @@
             <x-latest_blog imgSrc="{{asset('img/'.$blog->photo)}}" author="{{$blog->user->name}}" date="{{$blog->creation_date}}" title="{{$blog->title}}" body="{{$blog->content}}"/>
             <input type="hidden" name="blog_id" value="{{ $blog->id }}"/>
 
-            <h1 class="text-2xl font-semibold">Post Comment</h1>
-            <form action="" method="POST">
-                @csrf
-                <div class="flex flex-col gap-y-3 md:w-10/12 mt-6">
-                    <div class="">
-                        <input type="hidden" name="id" value="{{$blog->id}}">
-                        <textarea name="author_comment" class="resize-none rounded-md border border-blueGray-300 outline-none focus:outline-none focus:ring w-full px-3 pt-3 " rows="7" placeholder="Write Comment*"></textarea>
-                    </div>
-                    <div class=" bg-pink-600 py-2 px-3 text-center text-white font-semibold text-lg mt-6 rounded w-40 mb-8">
-                        <button type="submit" class="">Post Comment</button>
-                    </div>
-                </div>
-            </form>
+            
             <div class="comment-section">
                 <h1 class="text-2xl font-semibold">Comment</h1>
                 <div class="grid gap-y-6 mt-4">
@@ -55,6 +43,19 @@
                 @endforeach
                 </div>
             </div>
+            <h1 class="text-2xl font-semibold">Post Comment</h1>
+            <form action="" method="POST">
+                @csrf
+                <div class="flex flex-col gap-y-3 md:w-10/12 mt-6">
+                    <div class="">
+                        <input type="hidden" name="id" value="{{$blog->id}}">
+                        <textarea name="author_comment" class="resize-none rounded-md border border-blueGray-300 outline-none focus:outline-none focus:ring w-full px-3 pt-3 " rows="7" placeholder="Write Comment*"></textarea>
+                    </div>
+                    <div class=" bg-pink-600 py-2 px-3 text-center text-white font-semibold text-lg mt-6 rounded w-40 mb-8">
+                        <button type="submit" class="">Post Comment</button>
+                    </div>
+                </div>
+            </form>
             @endforeach
             @else
                 <h1 class="text-red-500">There are no blogs created</h1>
@@ -98,7 +99,7 @@
             <div class="recent-post-section mt-10">
                 <h1 class="text-2xl font-semibold mb-3">Recent Posts</h1>
                 <div class="grid gap-y-8">
-                    @foreach ($blogs->take(2) as $blog)
+                    @foreach (App\Models\Blog::orderBy('creation_date', 'DESC')->get()->take(3) as $blog)
                         <div class="flex space-x-4">
                             <div class="w-20">
                                 <img src="{{asset('img/'.$blog->photo)}}" class="h-20">

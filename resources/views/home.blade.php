@@ -75,8 +75,8 @@
         <x-shopex_offer imgSrc="img/24-hours-support.png" text="24/7 Support" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida."/>
     </div>
 </div>
-<div class="w-full mt-6 lg:mt-32">
-    <div class="lg:flex xl:px-48 " style="background-color: #F1F0FF;">
+<div class="w-full mt-6 lg:mt-32 ">
+    <div class="lg:flex xl:px-48" style="background-color: #F1F0FF;">
         <img src="img/sofa.png" class="w-1/2 object-cover object-center">
         <div class="flex flex-col px-4 space-y-3.5 lg:pt-24">
             <h1 class="section-heading text-xl mb-4 lg:text-4xl lg:mb-8">Unique Features Of leatest & Trending Poducts</h1>

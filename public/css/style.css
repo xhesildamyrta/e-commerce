@@ -123,6 +123,22 @@ h1,h2,.fa-th-large,.fa-list{
     font-size: 13px;
 }
 
+input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .custom-number-input input:focus {
+    outline: none !important;
+  }
+
+  .custom-number-input button:focus {
+    outline: none !important;
+  }
+
+
+
 @media (min-width: 1280px) {
     .aboutUsImg{ 
         width: 555px;

@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\SearchController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,15 @@ Route::get('/success', function () {
     return view('order-success');
 });
 
+Route::get('/checkout', function () {
+    return view('/checkout');
+});
+
+
+Route::get('/ajaxsearch', function () {
+    return view('/ajaxSearch');
+});
+Route::get('/ajaxsearch', [\App\Http\Controllers\SearchController::class, 'AjaxSearch'])->name('ajaxsearch');
 /*Authentication*/
 
 
@@ -51,13 +61,12 @@ Route::post('user-registration', [AuthController::class, 'store'])->name('regist
 Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 
 Route::get('/all-products', [App\Http\Controllers\ProductController::class, 'index'])->name('all-products');
+
 Route::get('/product-list', [App\Http\Controllers\ProductController::class, 'ShopList'])->name('product-list');
 
 
 Route::get('/', [App\Http\Controllers\CategoriesController::class, 'index']);
 Route::get('/search', [\App\Http\Controllers\SearchController::class, 'search'])->name('search');
-Route::get('/product-filter', [\App\Http\Controllers\FindController::class, 'index'])->name('product-filter');
-
 
 Route::get('/create', [\App\Http\Controllers\BlogController::class, 'create'])->name('create');
 Route::post('/create', [\App\Http\Controllers\BlogController::class, 'store'])->name('create-blog');
@@ -68,3 +77,11 @@ Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index'])->nam
 Route::post('/blog', [\App\Http\Controllers\CommentsController::class, 'store']);
 
 
+
+
+Route::get('/cart',  [App\Http\Controllers\CartController::class, 'index'])->name('cart.show');
+// Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
+Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
+// Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
+// Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
+// Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');

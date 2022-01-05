@@ -24,7 +24,9 @@
           <p class="item-desc xl:text-lg text-gray-400">{{$description}}</p>
         </div>
         <div class="flex pt-3 space-x-8 2xl:pt-8 ">
+        <a href="{{ route('cart.store')}}">
         <i class="fas fa-shopping-cart two rounded-full hover:bg-gray-300 "></i>
+          </a>
         <i class="far fa-heart two rounded-full hover:bg-gray-300"></i>
         <i class="fas fa-search-plus rounded-full hover:bg-gray-300"></i>
         </div>

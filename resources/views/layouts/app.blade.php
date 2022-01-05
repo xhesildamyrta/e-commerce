@@ -3,6 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--ajax-->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
+
+
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
   <title>{{ config('app.name') }}</title>
@@ -30,6 +36,21 @@
     },
   });
   </script>
-  <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>   
+  <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--alert timeout-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
