@@ -3,9 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\BlogController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,9 +41,7 @@ Route::get('/success', function () {
     return view('order-success');
 });
 
-Route::get('/checkout', function () {
-    return view('/checkout');
-});
+
 
 
 Route::get('/ajaxsearch', function () {
@@ -76,12 +77,9 @@ Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index'])->nam
 
 Route::post('/blog', [\App\Http\Controllers\CommentsController::class, 'store']);
 
+Route::get('/shopping-cart', [App\Http\Controllers\CartController::class, 'index'])->name('shopping-cart');
+Route::post('/shopping-cart', [App\Http\Controllers\CartController::class, 'store'])->name('shopping-cart-store');
+Route::delete('/shopping-cart/{product}', [App\Http\Controllers\CartController::class, 'destroy'])->name('shopping-cart-destroy');
+Route::delete('/shopping-cart', [App\Http\Controllers\CartController::class, 'clearAll'])->name('shopping-cart-clear');
 
-
-
-Route::get('/cart',  [App\Http\Controllers\CartController::class, 'index'])->name('cart.show');
-// Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
-Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
-// Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
-// Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
-// Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
+Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout');
