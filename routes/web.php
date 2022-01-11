@@ -38,7 +38,7 @@ Route::get('/contact', function () {
     return view('contact-us');
 });
 Route::get('/success', function () {
-    return view('order-success');
+    return view('thank-you');
 });
 
 
@@ -83,3 +83,5 @@ Route::delete('/shopping-cart/{product}', [App\Http\Controllers\CartController::
 Route::delete('/shopping-cart', [App\Http\Controllers\CartController::class, 'clearAll'])->name('shopping-cart-clear');
 
 Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout');
+Route::post('/checkout', [App\Http\Controllers\CheckoutController::class, 'store'])->name('checkout-store');
+Route::get('/thankyou', [App\Http\Controllers\ConfirmationController::class, 'index'])->name('confirmation');

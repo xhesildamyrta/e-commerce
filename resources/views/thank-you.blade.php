@@ -8,7 +8,9 @@
         <p class="mt-7 font-semibold text-center xl:px-72" style="color: #8D92A7;">Thank you for your order! Your order is being processed and will be completed within 3-6 hours.
             You will receive an email confirmation when your order is completed.
         </p>
-        <button class="addCart py-2.5 px-3 text-white w-60  mt-3 rounded-sm">Continue Shopping</button>
+        <a href="{{ route('all-products')}}">
+        <button class="addCart py-2.5 px-3 text-white w-60  mt-8 rounded-md">Continue Shopping</button>
+        </a>
     </div>
 </div>
 <div class="place-content-center py-3 xl:px-80 pt-11 pb-6 2xl:py-24">
