@@ -11,16 +11,6 @@
                 <form action="{{ route('checkout-store') }}" method="POST" id="payment-form">
                     {{ csrf_field() }}
                     <div class="flex flex-col gap-y-2 md:gap-y-6 mt-4 md:mt-10">
-                        <!-- <div class="flex flex-col sm:flex-row gap-y-2 gap-x-16">
-                        <div class="flex flex-col gap-y-2  ">
-                            <input type="text" name="firstname" class="bg-slate-100 focus:outline-none" placeholder="FirstName(optional)">
-                            <hr class="text-gray-400">
-                        </div>
-                        <div class="flex flex-col gap-y-2 ">
-                            <input type="text" name="lastname" class="bg-slate-100 focus:outline-none" placeholder="LastName(optional)">
-                            <hr class="text-gray-400">
-                        </div>
-                    </div> -->
                         @if (auth()->user())
                         <div class="flex flex-col gap-y-2">
                             <input type="email" id="email" name="email" class="bg-slate-100 focus:outline-none" value="{{ auth()->user()->email }}" readonly>
@@ -28,12 +18,12 @@
                         </div>
                         @else
                         <div class="flex flex-col gap-y-2">
-                            <input type="text" id="email" name="email" class="bg-slate-100 focus:outline-none" value="{{ old('email') }}" placeholder="Name" required>
+                            <input type="text" id="email" name="email" class="bg-slate-100 focus:outline-none" value="{{ old('email') }}" placeholder="Email" required>
                             <hr class="text-gray-400">
                         </div>
                         @endif
                         <div class="flex flex-col gap-y-2">
-                            <input type="text" id="name" name="name" class="bg-slate-100 focus:outline-none" value="{{ old('name') }}" required>
+                            <input type="text" id="name" name="name" class="bg-slate-100 focus:outline-none" value="{{ old('name') }}"  placeholder="Name" required>
                             <hr class="text-gray-400">
                         </div>
                         <div class="flex flex-col gap-y-2">
@@ -57,11 +47,11 @@
                             <hr class="text-gray-400">
                         </div>
                         <div class="flex flex-col gap-y-1">
-                            <label class="italic">Name On Card</label>
+                            <label class="pay italic">Name On Card</label>
                             <input type="text" id="name_on_card" name="name_on_card" value="" class="bg-slate-100 focus:outline-none">
                             <hr class="text-gray-400">
                         </div>
-                        <div class="flex flex-col gap-y-1">
+                        <div class="flex flex-col gap-y-2">
                             <label class="italic" for="card-element"> Credit or debit card</label>
                             <div id="card-element">
                                 <!-- A Stripe Element will be inserted here. -->
@@ -70,30 +60,10 @@
                             <div id="card-errors" role="alert" id="alert"></div>
                             <hr class="text-gray-400">
                         </div>
-                        <button type="submit" id="complete-order" class="bg-pink-500">Complete Order</button>
-
-
-
-
-
-
-
-
-
-                        <!-- <div class="flex flex-col sm:flex-row gap-y-2 gap-x-16">
-                        <div class="flex flex-col gap-y-2">
-                            <label>Name On Card</label>
-                            <input type="text" id="name_on_card" name="name_on_card" value="" class="bg-slate-100 focus:outline-none">
-                            <hr class="text-gray-400">
-                        </div>
-                        <div class="flex flex-col gap-y-2 ">
-                            <input type="text" name="postalCode" class="bg-slate-100  focus:outline-none" placeholder="Postal Code" class="">
-                            <hr class="text-gray-400">
-                        </div>
-                    </div> -->
-                        <div class="bg-pink-600 py-1 md:py-2 px-1 md:px-2 w-40 text-center text-white font-semibold mt-5  md:mt-20 rounded">
+                        <div class="flex flex-col sm:flex-row justify-between">
+                            <button type="submit" id="complete-order" class="bg-pink-500 py-2 text-center text-white font-semibold mt-5  md:mt-20 sm:w-60 rounded-md">Complete Order</button>
                             <a href="{{ route('shopping-cart') }}">
-                                <button type="submit" class="">Back To Cart</button>
+                                <button type="button"  class="w-full bg-pink-500 py-2 text-center text-white font-semibold mt-5  md:mt-20 sm:w-60 rounded-md">Back To Cart</button>
                             </a>
                         </div>
                     </div>
@@ -122,38 +92,25 @@
                 <div>
                     <hr class="text-gray-400">
                 </div>
-                @endforeach
-            </div>
-
-            <div class="section2sub1 flex flex-col gap-y-4 px-5 py-8 rounded bg-slate-100  ">
+                <div class="flex justify-between">
+                    <h1>Totals</h1>
+                    <p>{{ '$' . Cart::total() }}</p>
+                </div>
                 <div>
-                    <div class="flex justify-between">
-                        <h1>Totals</h1>
-                        <p>{{ '$' . Cart::total() }}</p>
-                    </div>
-                    <hr class="text-gray-400 mt-2">
+                    <hr class="text-gray-400">
                 </div>
-                <div class="">
-                    <label class="flex place-items-center mt-3">
-                        <input type="checkbox" class="form-checkbox h-4 w-4 text-green-600 bg-green-600" checked><span class="ml-2 text-gray-700">Shipping & Taxes included</span>
-                    </label>
-                </div>
-                <div class="create-blog-section bg-green-600 py-2 px-7 text-center text-white font-semibold  mt-6 rounded">
-                    <a href="">
-                        <button type="submit" class="">Proceed To Checkout</button>
-                    </a>
-                </div>
-            </div>
+                @endforeach
+            </div>   
         </div>
         <!--end section 2-->
     </div>
     <!--wrapper end-->
 </div>
+<script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
 <script>
     (function() {
         var stripe = Stripe('pk_test_51JZi8WCrq1Uo3gNLhgDQTC96CxTgmM3FQpxCSdtTXSMlBVhC2HM3k5m9hCxsy0Eg4PVX3y3V9sc54BEn7QNSN4lD004ATFRluN');
         var elements = stripe.elements();
-
         var style = {
             base: {
                 color: '#32325d',
@@ -204,6 +161,15 @@
                 }
             });
         });
+        function stripeTokenHandler(token) {
+            var form = document.getElementById('payment-form');
+            var hiddenInput = document.createElement('input');
+            hiddenInput.setAttribute('type', 'hidden');
+            hiddenInput.setAttribute('name', 'stripeToken');
+            hiddenInput.setAttribute('value', token.id);
+            form.appendChild(hiddenInput);
+            form.submit();
+        }
     })();
 </script>
 @endsection
