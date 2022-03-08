@@ -61,10 +61,10 @@
                             <hr class="text-gray-400">
                         </div>
                         <div class="flex flex-col sm:flex-row justify-between">
-                            <button type="submit" id="complete-order" class="bg-pink-500 py-2 text-center text-white font-semibold mt-5  md:mt-20 sm:w-60 rounded-md">Complete Order</button>
                             <a href="{{ route('shopping-cart') }}">
                                 <button type="button"  class="w-full bg-pink-500 py-2 text-center text-white font-semibold mt-5  md:mt-20 sm:w-60 rounded-md">Back To Cart</button>
                             </a>
+                            <button type="submit" id="complete-order" class="bg-pink-500 py-2 text-center text-white font-semibold mt-5  md:mt-20 sm:w-60 rounded-md">Complete Order</button>
                         </div>
                     </div>
                 </form>

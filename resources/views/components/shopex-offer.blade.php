@@ -6,6 +6,6 @@
         <h1 class="free-delivery">{{$text}}</h1>
     </div>
     <div class="text-center mb-4 lg:mb-12 px-4">
-        <p class="font-bold text-gray-400">{{$content}}</p>
+        <p class="font-medium text-gray-400 lg:font-bold ">{{$content}}</p>
     </div>
 </div>

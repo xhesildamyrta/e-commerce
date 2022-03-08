@@ -15,7 +15,7 @@
     <div class="pt-8  lg:pt-36">
         <h1 class="section-heading text-xl xl:text-4xl  text-center text-black">Our Features</h1>
     </div>
-    <div class="grid grid-cols-2 lg:grid-cols-4 space-y-0 space-x-3 lg:space-x-7 mt-6 lg:mt-32">
+    <div class="grid grid-cols-1 lg:grid-cols-4 space-y-0 space-x-3 lg:space-x-7 mt-6 lg:mt-32">
         <x-shopex_offer imgSrc="img/free-delivery.png" text="Free Delivery" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida."/>
         <x-shopex_offer imgSrc="img/cashback 1.png" text="100% Cash Back" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida."/>
         <x-shopex_offer imgSrc="img/premium-quality.png" text="Quality Product" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida."/>

@@ -63,7 +63,7 @@
             </select>
         </div>
     </div>
-    <div class="grid grid-cols-3 gap-x-8 gap-y-5 lg:gap-y-20 mt-4 lg:mt-16">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-5 lg:gap-y-20 mt-4 lg:mt-16">
         @foreach (App\Models\Product::all()->where('yearOfRelease', '>=', 2021)->take(6) as $pro)
         <x-latest_product src="{{asset('img/'.$pro->photoURL)}}" item="{{ $pro->title }}" price="$ {{ $pro->price }}" delPrice="$ {{ $pro->reducedPrice }}" />
         @endforeach
