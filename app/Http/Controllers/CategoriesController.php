@@ -10,14 +10,13 @@ class CategoriesController extends Controller
      public function index() {
         $categories = Category::all();
 
-        return view('home', compact('categories'));
+        return view('categories', compact('categories'));
     }
-    public function category($category) {
-        $categories = Category::all();
-        dd($categories);
-        $category = Category::where('name', $category)->get();
-        $products = Category::with('products')->where('category_id', $category[0]->id)->get();
+    public function show($category) {
+        $category = Category::find($category);
+        // $category = Category::where('name', $category)->get();
+        // $products = Category::with('products')->where('category_id', $category[0]->id)->get();
 
-        return view('home', compact('category', 'products', 'categories'));
+        return view('category-product',['category'=>$category]);
     }
 }

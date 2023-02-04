@@ -22,6 +22,8 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+<script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
   <x-header/>
@@ -36,7 +38,7 @@
     },
   });
   </script>
-  <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>  
+  <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--alert timeout-->
 
 
