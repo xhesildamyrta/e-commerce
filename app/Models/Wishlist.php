@@ -4,20 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
+use App\Models\Product;
 
-class Order extends Model
+class Wishlist extends Model
 {
     use HasFactory;
-    protected $table = 'orders';
 
-    protected $fillable = [
-        'user_id',
-        'dateOfPurchase',
-        'product_id'
-    ];
+    protected $fillable = ['product_id', 'user_id'];
+    protected $table = 'wishlists';
 
-    public function user()
-    {
+    public function user(){
         return $this->belongsTo(User::class);
     }
 

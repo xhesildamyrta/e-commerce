@@ -8,7 +8,7 @@
                     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
                 </svg>
             </button>
-            <i class="fas fa-search-plus text-indigo-900"></i>
+            {{-- <i class="fas fa-search-plus text-indigo-900"></i> --}}
             <i class="far fa-heart text-indigo-900"></i>
         </div>
         <div class="">

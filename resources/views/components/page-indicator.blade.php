@@ -3,7 +3,6 @@
     <h1 class="indicator-title text-xl xl:text-4xl ">{{$page}}</h1>
     <ul class="flex space-x-2 pt-2 font-medium">
       <li class=""><a href="/">Home  .</a></li>
-      <li>Pages  .</li>
       <li class="indicator-page">{{$page}}</li>
     </ul>
   </div>

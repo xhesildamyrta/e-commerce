@@ -19,7 +19,7 @@ class Product extends Model
         // 'color',
         'rating',
     ];
-    
+
     public $timestamps = false;
     protected $table = 'products';
 
@@ -27,5 +27,19 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+
+    /**
+     * The roles that belong to the Product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function wishlist(){
+        return $this->belongsToMany(Wishlist::class);
+    }
+
+    public function order(){
+        return $this->belongsToMany(Order::class);
     }
 }

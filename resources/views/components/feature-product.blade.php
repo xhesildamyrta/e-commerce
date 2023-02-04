@@ -13,7 +13,7 @@
         </div>
         <div class="grid place-items-center px-3 pt-4 lg:px-16">
             <img src="{{$imgSrc}}" class="object-center w-full">
-            <button class="viewDetail-btn py-1 sm:py-2 px-2 text-white text-sm text-center hidden group-hover:flex rounded">View Details</button>
+            <button class="viewDetail-btn py-1 sm:py-2 px-2 text-white text-sm text-center hidden group-hover:flex rounded">Add to cart</button>
         </div>
     </div>
     <div class="content-wrapper text-center space-y-1 sm:space-y-3 group-hover:bg-blue-600" style="box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);">

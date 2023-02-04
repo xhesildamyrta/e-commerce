@@ -8,20 +8,24 @@
         <i class="fas fa-phone-volume"></i><span class="hidden lg:flex">(12345)67890</span>
       </a>
     </div>
-    <div class="hidden md:display md:flex md:items-center space-x-5">
-      <select class="focus:outline-none" name="language">
+    <div x-data="{ open: false }" class="hidden md:display md:flex md:items-center space-x-5">
+      {{-- <select class="focus:outline-none" name="language">
         <option value="English">English</option>
         <option value="Italian">Italian</option>
       </select>
       <select class="focus:outline-none" name="valute">
         <option value="usd">USD</option>
         <option value="euro">EUR</option>
-      </select>
+      </select> --}}
       @if( auth()->check() )
-      <a href="" class="flex items-center space-x-1"><i class="far fa-user flex"></i>
+      <button class="flex items-center space-x-1" x-on:click="open = ! open"><i class="far fa-user flex"></i>
         <p>{{ auth()->user()->name }}</p>
-      </a>
+      </button>
       <a href="{{ route('signout') }}" class="flex items-center space-x-1">Logout</a>
+      <div x-show="open" x-transition class="p-5 px-10 bg-white z-50 absolute top-10 mr-10 flex flex-col gap-y-4">
+        <a href="" class="text-black">Edit account</a>
+        <a href="{{route('orders')}}" class="text-black">My Orders</a>
+    </div>
       @else
       <a href="{{ route('login') }}" class="flex items-center space-x-1">
         <p>Login</p><i class="far fa-user flex"></i>
@@ -30,7 +34,7 @@
         <p>Register</p>
       </a>
       @endif
-      <a href="#" class="flex items-center space-x-1">
+      <a href="{{ route('wishlist') }}" class="flex items-center space-x-1">
         <p>Wishlist</p><i class="far fa-heart"></i>
       </a>
       <a href="{{ route('shopping-cart') }}">
@@ -54,15 +58,15 @@
     </div>
     <div class="hidden flex-col mt-3 md:flex md:flex-row lg:space-x-3 xl:space-x-8 md:mt-0" id="navbar-collapse">
       <div class="flex items-center space-x-3 md:hidden pb-4 md:pb-0">
-        <select class="focus:outline-none" name="language">
+        {{-- <select class="focus:outline-none" name="language">
           <option value="English">English</option>
           <option value="Italian">Italian</option>
         </select>
         <select class="focus:outline-none" name="valute">
           <option value="usd">USD</option>
           <option value="euro">EUR</option>
-        </select>
-        <a class="flex items-center space-x-1" href="www.google.com">
+        </select> --}}
+        <a class="flex items-center space-x-1" href="{{ route('wishlist') }}">
           <p>Wishlist</p><i class="far fa-heart"></i>
         </a>
         <a href="{{ route('shopping-cart') }}">
@@ -70,7 +74,7 @@
         </a>
       </div>
       <a href="/" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600 ">Home</a>
-      <a href="" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600 ">Pages</a>
+      <a  href="{{ route('categories') }}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600 ">Categories</a>
       <a href="{{ route('product-list') }}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600 ">Products</a>
       <a href="{{ route('blog') }}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Blog</a>
       <a href="{{ route('all-products') }}" class="p-2 lg:px-4 md:mx-2 rounded hover:bg-gray-200 hover:text-pink-600">Shop</a>

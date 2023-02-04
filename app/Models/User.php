@@ -54,4 +54,12 @@ class User extends Authenticatable
     public function commments(){
         return $this->hasMany(Comment::class);
     }
+
+    public function wishlist(){
+        return $this->hasMany(Wishlist::class);
+    }
+
+    public function order(){
+        return $this->hasMany(Order::class);
+    }
 }

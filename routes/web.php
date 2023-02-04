@@ -54,34 +54,38 @@ Route::get('/ajaxsearch', [\App\Http\Controllers\SearchController::class, 'AjaxS
 
 
 
-Route::get('dashboard', [AuthController::class, 'dashboard']); 
+Route::get('dashboard', [AuthController::class, 'dashboard']);
 Route::get('login', [AuthController::class, 'index'])->name('login');
-Route::post('user-login', [AuthController::class, 'userLogin'])->name('login.user'); 
+Route::post('user-login', [AuthController::class, 'userLogin'])->name('login.user');
 Route::get('register', [AuthController::class, 'register'])->name('register');
-Route::post('user-registration', [AuthController::class, 'store'])->name('register.user'); 
+Route::post('user-registration', [AuthController::class, 'store'])->name('register.user');
 Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 
-Route::get('/all-products', [App\Http\Controllers\ProductController::class, 'index'])->name('all-products');
 
+Route::get('/all-products', [App\Http\Controllers\ProductController::class, 'index'])->name('all-products');
 Route::get('/product-list', [App\Http\Controllers\ProductController::class, 'ShopList'])->name('product-list');
 
 
-Route::get('/', [App\Http\Controllers\CategoriesController::class, 'index']);
+Route::get('/categories', [App\Http\Controllers\CategoriesController::class, 'index'])->name('categories');
+Route::get('/categories/{id}', [App\Http\Controllers\CategoriesController::class, 'show'])->name('category.show');
 Route::get('/search', [\App\Http\Controllers\SearchController::class, 'search'])->name('search');
 
+//routes only for authenticated users
+Route::group(['middleware' => ['auth']], function () {
 Route::get('/create', [\App\Http\Controllers\BlogController::class, 'create'])->name('create');
 Route::post('/create', [\App\Http\Controllers\BlogController::class, 'store'])->name('create-blog');
 Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index'])->name('blog');
-
-
-
 Route::post('/blog', [\App\Http\Controllers\CommentsController::class, 'store']);
+//TODO: wishlist to be reimplemented
+Route::get('/wishlist', [\App\Http\Controllers\WishlistController::class, 'index'])->name('wishlist');
+Route::get('/orders', [AuthController::class, 'orders'])->name('orders');
+});
+
 
 Route::get('/shopping-cart', [App\Http\Controllers\CartController::class, 'index'])->name('shopping-cart');
 Route::post('/shopping-cart', [App\Http\Controllers\CartController::class, 'store'])->name('shopping-cart-store');
 Route::delete('/shopping-cart/{product}', [App\Http\Controllers\CartController::class, 'destroy'])->name('shopping-cart-destroy');
 Route::delete('/shopping-cart', [App\Http\Controllers\CartController::class, 'clearAll'])->name('shopping-cart-clear');
-
 Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout');
 Route::post('/checkout', [App\Http\Controllers\CheckoutController::class, 'store'])->name('checkout-store');
 Route::get('/thankyou', [App\Http\Controllers\ConfirmationController::class, 'index'])->name('confirmation');

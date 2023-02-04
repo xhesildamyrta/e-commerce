@@ -31,15 +31,7 @@ span.swiper-pagination-bullet{
 span.swiper-pagination-bullet-active{
     background-color:#FB2E86;
 }
-.rhombus span.swiper-pagination-bullet{
-    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-} 
-.rhombus span.swiper-pagination-bullet-active{
-    background-color:#FB2E86;
-    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);  
-}
+
 .pagination{
     display:flex;
     float:right;
